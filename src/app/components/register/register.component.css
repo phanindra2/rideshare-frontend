@@ -1,0 +1,65 @@
+:host {
+  display: block;
+  position: relative; /* Required for positioning */
+}
+
+/* Wrapper for the blurred background image */
+.background-wrapper {
+  position: relative;
+  min-height: 100vh; /* Full height for the wrapper */
+}
+
+/* Pseudo-element for the background image */
+.background-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /*background-image: url('../../../assets/loginbg.jpeg'); /* Adjust path accordingly */
+  background-size: cover; /* Ensure the image covers the entire area */
+  background-position: center; /* Center the image */
+  background-color:rgb(183, 212, 221);
+  filter: blur(10px); /* Apply blur effect */
+  z-index: 0; /* Place this behind the registration container */
+}
+
+/* Styling for the registration container */
+.registration-container {
+  max-width: 400px; /* Compact form */
+  margin: 40px auto; /* Spacing from top */
+  padding: 30px; /* Increased padding */
+ /* background-color: rgba(255, 255, 255, 0.95); /* Lighter background */
+  border-radius: 12px; /* Softer corners */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative; /* Position relative to layer above the background */
+  z-index: 1; /* Ensure the form is above the background */
+  background-color: lightgray;
+}
+
+h2 {
+  text-align: center;
+  color: #6a1b9a; /* Soft purple color */
+  margin-bottom: 20px; /* Space below header */
+}
+
+mat-form-field {
+  width: 100%; /* Full width */
+  margin-bottom: 15px; /* Space between fields */
+}
+
+button {
+  width: 100%; /* Full-width button */
+  background-color: #6a1b9a; /* Soft purple */
+  color: white; /* Button text color */
+}
+
+button:hover {
+  background-color: #4a148c; /* Darker shade on hover */
+}
+
+.mat-error {
+  font-size: 0.8em; /* Smaller error text */
+  color: #e53935; /* Lighter red for errors */
+}

@@ -1,0 +1,60 @@
+<header class="app-header">
+  <div class="header-content">
+    <div class="logo-container">
+      <i class="fas fa-car logo"></i>
+      <h3>DesiRides</h3>
+    </div>
+    <div class="nav-container">
+      <div class="button-container">
+        <button class="btn" (click)="toggleAboutUs()">About Us</button>
+        <button class="btn" (click)="toggleContact()">Contact</button>
+      </div>
+      <div class="user-container" (click)="toggleDropdown()">
+        <i class="fas fa-user user-icon"></i>
+        <div class="dropdown" [class.active]="isDropdownOpen">
+          <ul>
+            <li *ngIf="!isLoggedIn" routerLink="/login">Login</li>
+            <li *ngIf="!isLoggedIn" routerLink="/register">Register</li>
+            
+            <li *ngIf="isLoggedIn" routerLink="/dashboard">Dashboard</li>
+            <li *ngIf="isLoggedIn" (click)="logout()">Logout</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="info-container" *ngIf="isAboutUsVisible">
+    <h2>About Us</h2>
+    <p>DesiRides is a platform to find and offer rides.</p>
+  </div>
+
+  <div class="info-container" *ngIf="isContactVisible">
+    <h2>Contact Us</h2>
+    <p>You can reach us at <a href="mailto:contact@desirides.com">contact</a>.</p>
+
+  </div>
+
+  <!-- Logout message -->
+  <div class="logout-message" *ngIf="logoutMessageVisible">
+    <p>You are logged out.</p>
+    <button (click)="confirmLogout()">OK</button>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <p>&copy; {{ currentYear }} DesiRides. All rights reserved.</p>
+  <a href="#" (click)="openTerms($event)">Terms and Conditions</a>
+</footer>
+
+<div class="modal" [class.active]="isModalOpen">
+  <div class="modal-content">
+    <span class="close" (click)="closeTerms()">&times;</span>
+    <h2>Terms and Conditions</h2>
+    <p>demo terms</p>
+  </div>
+</div>

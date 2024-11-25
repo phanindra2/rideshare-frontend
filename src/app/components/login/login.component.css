@@ -1,0 +1,47 @@
+:host {
+    display: block;
+    min-height: 100vh; /* Full height for the host element */
+    position: relative; /* Required for the pseudo-element */
+  }
+  
+  /* Pseudo-element for the background image */
+  :host::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgb(183, 212, 221);
+    /*background-image: url('../../../assets/loginbg.jpeg'); /* Adjust the path as necessary */
+    background-size: cover; /* Ensure the image covers the entire area */
+    background-position: center; /* Center the image */
+    filter: blur(10px); /* Apply blur effect */
+    z-index: 0; /* Place this behind the login container */
+  }
+  
+  /* Styling for the login container */
+  .login-container {
+    max-width: 400px; /* Max width for the form */
+    margin: auto; /* Center the form horizontally */
+    padding: 20px; /* Padding inside the form */
+   /* background-color: rgba(249, 249, 249, 0.9); /* Light background with slight transparency */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    position: relative; /* Position relative to layer above the background */
+    z-index: 1; /* Ensure the form is above the background */
+    margin-bottom: 150px; /* Space below the form */
+    background-color: lightgray;
+  }
+  
+  /* Styling for the heading */
+  h2 {
+    text-align: center; /* Center the heading */
+    color: darkslategray; /* Heading color */
+  }
+  
+  /* Styling for form fields */
+  mat-form-field {
+    width: 100%; /* Full width for input fields */
+  }
+  

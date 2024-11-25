@@ -1,0 +1,51 @@
+<div class="search-container">
+  <form (ngSubmit)="onSearch()" #searchForm="ngForm" class="search-form">
+    <mat-form-field appearance="fill">
+      <mat-label>Source</mat-label>
+      <input matInput [(ngModel)]="source" name="source" required />
+      <mat-error *ngIf="searchForm.submitted && !source">Source is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Destination</mat-label>
+      <input matInput [(ngModel)]="destination" name="destination" required />
+      <mat-error *ngIf="searchForm.submitted && !destination">Destination is required.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        [(ngModel)]="selectedDate"
+        name="selectedDate"
+        required
+        [min]="today"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="search-button-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="searchForm.invalid">Search</button>
+    </div>
+  </form>
+
+  <div class="ride-results" *ngIf="rides.length > 0">
+    <h2>Available Rides</h2>
+    <div *ngFor="let ride of rides" class="ride-card">
+      <div class="ride-details">
+        <h3>Start Time: {{ ride.startTime }}</h3>
+        <p>End Time: {{ ride.endTime }}</p>
+        <p><strong>Source:</strong> {{ ride.source }}</p>
+        <p><strong>Destination:</strong> {{ ride.destination }}</p>
+        <p><strong>Date:</strong> {{ ride.rideDate | date:'mediumDate' }}</p>
+      </div>
+      <div class="ride-price">
+        <p><strong>Price:</strong> ${{ ride.price }}</p>
+        <p><strong>Offered by:</strong> {{ ride.user?.name }}</p>
+        <button mat-button (click)="viewUserData(ride.user)">View User</button> <!-- Adjust this function as needed -->
+      </div>
+    </div>
+  </div>
+</div>

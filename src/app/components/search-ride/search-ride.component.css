@@ -1,0 +1,116 @@
+/* Container for the search form with background image */
+.search-container {
+    position: relative; /* Make it a positioning context */
+    overflow: hidden; /* Prevent overflow from the pseudo-element */
+    padding: 20px; /* Add padding for content */
+    border-radius: 8px; /* Optional: round the corners */
+    height: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add some shadow for depth */
+    margin-bottom: 250px;
+}
+
+.search-container::before {
+    content: ''; /* Create a pseudo-element */
+    position: absolute; /* Position it absolutely */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+ /*background-image: url('../../../assets/loginbg.jpeg'); /* Use your image */
+ background-color:rgb(183, 212, 221);
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    filter: blur(8px); /* Apply blur effect */
+    z-index: 0; /* Send it to the back */
+}
+
+.heading {
+    text-align: center; /* Center the heading */
+    color: white; /* Change to desired color */
+    margin-bottom: 20px; /* Space below heading */
+    z-index: 1; /* Bring heading in front of the blurred background */
+    position: relative; /* Ensure it is above the background */
+}
+
+.search-form {
+    margin-top: 50px;
+    position: relative; /* Position the form above the pseudo-element */
+    display: flex;
+    align-items: center; /* Center items vertically */
+    gap: 10px; /* Small space between fields */
+    flex-wrap: wrap; /* Allow fields to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally */
+    margin-bottom: 20px; /* Reduced space below the form */
+    z-index: 1; /* Bring form content in front of the blurred background */
+}
+
+mat-form-field {
+    flex: 0 1 200px; /* Set a base width for the fields */
+    min-width: 200px; /* Set a minimum width */
+    transition: transform 0.3s; /* Smooth transition for size change */
+}
+
+/* Increase input field size on focus */
+mat-form-field:focus-within {
+    transform: scale(1.05); /* Slightly enlarge on focus */
+}
+
+/* Center the search button */
+.search-button-container {
+    display: flex;
+    justify-content: center; /* Center the button */
+    z-index: 1; /* Ensure the button is above the blurred background */
+   /* margin-top: 50px; /* Space above the button */
+}
+
+button {
+    background-color: #147477; /* Soft purple */
+    color: white; /* Button text color */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    height: 56px; /* Match the height of the input fields */
+    padding: 0 20px; /* Horizontal padding for button */
+    font-size: 16px; /* Increase font size if needed */
+    flex-shrink: 0; /* Prevent the button from shrinking */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Round button corners */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #4a148c; /* Darker shade on hover */
+}
+
+/* Styles for ride cards */
+/* Styles for ride cards */
+.ride-card {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Inner spacing */
+    margin: 10px; /* Space between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between details and price */
+    align-items: center; /* Center items vertically */
+}
+
+/* Ride details styles */
+.ride-details {
+    flex: 1; /* Allow details to take available space */
+}
+
+/* Ride price styles */
+.ride-price {
+    text-align: right; /* Align text to the right */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .ride-card {
+        flex-direction: column; /* Stack details and price vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+    }
+    
+    .ride-price {
+        text-align: left; /* Align text to the left on small screens */
+    }
+}

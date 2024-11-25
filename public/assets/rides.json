@@ -1,0 +1,91 @@
+[
+    {
+      "id": 1,
+      "source": "123 Main St, Cityville",
+      "destination": "456 Elm St, Townsville",
+      "price": 25.50,
+      "startTime": "2023-10-22T14:30:00Z",
+      "endTime": "2023-10-22T15:00:00Z",
+      "seats": 4,
+      "vehicle": {
+        "carNumber": "XYZ 1234",
+        "model": "Toyota Camry",
+        "capacity": 4
+      },
+      "rideDate": "2023-10-22",
+      "user": {
+        "name": "Alice Johnson",
+        "email": "alice.johnson@example.com",
+        "phone": "555-1234",
+        "dob": "1990-05-15",
+        "gender": "Female"
+      }
+    },
+    {
+      "id": 2,
+      "source": "789 Oak St, Cityville",
+      "destination": "321 Pine St, Townsville",
+      "price": 15.75,
+      "startTime": "2023-10-23T08:15:00Z",
+      "endTime": "2023-10-23T08:45:00Z",
+      "seats": 4,
+      "vehicle": {
+        "carNumber": "ABC 5678",
+        "model": "Honda Accord",
+        "capacity": 4
+      },
+      "rideDate": "2023-10-23",
+      "user": {
+        "name": "Bob Smith",
+        "email": "bob.smith@example.com",
+        "phone": "555-5678",
+        "dob": "1985-10-22",
+        "gender": "Male"
+      }
+    },
+    {
+      "id": 3,
+      "source": "654 Maple St, Cityville",
+      "destination": "987 Birch St, Townsville",
+      "price": 30.00,
+      "startTime": "2023-10-22T12:00:00Z",
+      "endTime": "2023-10-22T12:30:00Z",
+      "seats": 4,
+      "vehicle": {
+        "carNumber": "LMN 9101",
+        "model": "Ford Focus",
+        "capacity": 4
+      },
+      "rideDate": "2023-10-22",
+      "user": {
+        "name": "Charlie Brown",
+        "email": "charlie.brown@example.com",
+        "phone": "555-8765",
+        "dob": "1992-03-30",
+        "gender": "Male"
+      }
+    },
+    {
+      "id": 4,
+      "source": "432 River St, Cityville",
+      "destination": "654 Oak St, Townsville",
+      "price": 20.00,
+      "startTime": "2023-10-24T09:00:00Z",
+      "endTime": "2023-10-24T09:30:00Z",
+      "seats": 4,
+      "vehicle": {
+        "carNumber": "PQR 1234",
+        "model": "Nissan Altima",
+        "capacity": 4
+      },
+      "rideDate": "2023-10-24",
+      "user": {
+        "name": "Dana White",
+        "email": "dana.white@example.com",
+        "phone": "555-4321",
+        "dob": "1988-07-10",
+        "gender": "Female"
+      }
+    }
+  ]
+  

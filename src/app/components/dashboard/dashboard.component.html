@@ -1,0 +1,140 @@
+<div class="dashboard">
+  <h3>Welcome back, {{ userName }}!</h3>
+
+  <div class="action-buttons">
+    <button mat-raised-button color="primary" (click)="toggleOfferRide()">
+      {{ isOfferingRide ? 'Cancel Offering Ride' : 'Offer a New Ride' }}
+    </button>
+    <button mat-raised-button color="accent" (click)="toggleSearchRide()">
+      {{ isSearchingRide ? 'Cancel Search' : 'Search for a Ride' }}
+    </button>
+  </div>
+
+  <mat-card *ngIf="isOfferingRide" class="ride-card">
+    <mat-card-header>
+      <mat-card-title>Offer a New Ride</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="offerRide()">
+        <mat-form-field>
+          <mat-label>Source</mat-label>
+          <input matInput [(ngModel)]="newRide.source" name="source" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Destination</mat-label>
+          <input matInput [(ngModel)]="newRide.destination" name="destination" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ride Date</mat-label>
+          <input matInput [matDatepicker]="ridePicker" [(ngModel)]="newRide.rideDate" name="rideDate" required [min]="today">
+          <mat-datepicker-toggle matSuffix [for]="ridePicker"></mat-datepicker-toggle>
+          <mat-datepicker #ridePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Start Time</mat-label>
+          <input type="time" matInput [(ngModel)]="newRide.startTime" name="startTime" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>End Time</mat-label>
+          <input type="time" matInput [(ngModel)]="newRide.endTime" name="endTime" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Price</mat-label>
+          <input matInput type="number" [(ngModel)]="newRide.price" name="price" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>No. of Seats</mat-label>
+          <input matInput type="number" [(ngModel)]="newRide.seats" name="seats" required>
+        </mat-form-field>
+
+        <h4>Vehicle Details</h4>
+        <mat-form-field>
+          <mat-label>Car Number</mat-label>
+          <input matInput [(ngModel)]="newRide.vehicle.carNumber" name="carNumber" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Model</mat-label>
+          <input matInput [(ngModel)]="newRide.vehicle.model" name="model" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Capacity</mat-label>
+          <input matInput type="number" [(ngModel)]="newRide.vehicle.capacity" name="capacity" required>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Submit Ride</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card *ngIf="isSearchingRide" class="ride-card">
+    <mat-card-header>
+      <mat-card-title>Search for a Ride</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="searchRides()">
+        <mat-form-field>
+          <mat-label>Source</mat-label>
+          <input matInput [(ngModel)]="searchCriteria.source" name="source" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Destination</mat-label>
+          <input matInput [(ngModel)]="searchCriteria.destination" name="destination" required>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Ride Date</mat-label>
+          <input matInput [matDatepicker]="searchPicker" [(ngModel)]="searchCriteria.rideDate" name="rideDate" required [min]="today">
+          <mat-datepicker-toggle matSuffix [for]="searchPicker"></mat-datepicker-toggle>
+          <mat-datepicker #searchPicker></mat-datepicker>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Find Ride</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="upcoming-rides-card">
+    <mat-card-header>
+      <mat-card-title>Upcoming Rides:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let ride of upcomingRides">
+          {{ ride.details }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="history-card">
+    <mat-card-header>
+      <mat-card-title>My Ride History:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let ride of rideHistory">
+          {{ ride.details }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="promotions-card">
+    <mat-card-header>
+      <mat-card-title>Promotions/Offers:</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p *ngIf="currentPromotion">{{ currentPromotion }}</p>
+      <p *ngIf="!currentPromotion">No current promotions available.</p>
+    </mat-card-content>
+  </mat-card>
+</div>

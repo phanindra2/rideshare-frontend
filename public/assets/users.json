@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "phone": "555-1234",
+      "dob": "1990-05-15",
+      "gender": "Female",
+      "password": "password123"
+    },
+    {
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "phone": "555-5678",
+      "dob": "1985-10-22",
+      "gender": "Male",
+      "password": "securepass456"
+    },
+    {
+      "name": "Charlie Brown",
+      "email": "charlie.brown@example.com",
+      "phone": "555-8765",
+      "dob": "1992-03-30",
+      "gender": "Male",
+      "password": "mypassword789"
+    },
+    {
+      "name": "Dana White",
+      "email": "dana.white@example.com",
+      "phone": "555-4321",
+      "dob": "1988-07-10",
+      "gender": "Female",
+      "password": "passw0rd321"
+    },
+    {
+      "name": "Eve Davis",
+      "email": "eve.davis@example.com",
+      "phone": "555-2468",
+      "dob": "1995-12-01",
+      "gender": "Female",
+      "password": "evesecure123"
+    }
+  ]
+  

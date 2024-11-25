@@ -1,0 +1,184 @@
+.app-header {
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo-container and nav */
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center; /* Aligns icon and name vertically */
+    color: #445d59;
+  }
+  
+  .logo {
+    font-size: 40px; /* Adjust icon size */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove any padding */
+  }
+  
+  h3 {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Ensure no padding */
+    display: inline; /* Ensures inline display */
+    line-height: 40px; /* Vertically align with the icon */
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center; /* Center the search bar vertically */
+    margin-right: 1rem; /* Space between search and nav */
+  }
+  
+  .search-link {
+    text-decoration: none; /* Remove underline from anchor */
+    color: inherit; /* Inherit text color */
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center; /* Center the text and icon vertically */
+    padding: 0.5rem; /* Padding around the search bar */
+    border: 1px solid #ccc; /* Border for styling */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #445d59; /* Background color */
+    cursor: pointer; /* Show pointer cursor on hover */
+    min-width: 200px; /* Set a minimum width */
+    max-width: 400px; /* Optional: set a maximum width */
+  }
+  
+  .search-bar span {
+    margin-left: 1.5rem;
+    margin-right: 0.5rem; /* Space between text and icon */
+    color: #ffffff; /* Change placeholder color for better visibility */
+  }
+  
+  .search-icon {
+    font-size: 20px; /* Adjust icon size */
+    color: #ffffff; /* Icon color */
+  }
+  
+  nav {
+    display: flex;
+    gap: 1rem; /* Space between links */
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #007bff; /* Link color */
+    transition: color 0.2s; /* Smooth color transition */
+  }
+  
+  nav a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #0056b3; /* Darker shade on hover */
+  }
+  
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    transition: all 0.3s ease; /* Smooth transition for modal */
+  }
+  
+  .modal.active {
+    display: block; /* Show the modal */
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    border-radius: 4px; /* Rounded corners for modal */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .user-container {
+    position: relative; /* Needed for absolute positioning of dropdown */
+  }
+  
+  .dropdown {
+    position: absolute; /* Position the dropdown absolutely */
+    right: 0; /* Aligns the dropdown to the right */
+    background-color: #fff; /* Dropdown background color */
+    border: 1px solid #ccc; /* Border for dropdown */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 1000; /* Make sure it appears above other elements */
+    display: none; /* Hide by default */
+  }
+  
+  .dropdown ul {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+  }
+  
+  .dropdown li {
+    padding: 0.5rem 1rem; /* Spacing for list items */
+  }
+  
+  .dropdown li:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+  }
+  
+  .dropdown.active {
+    display: block; /* Show dropdown when active */
+  }
+  .info-container {
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .info-container h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .info-container p {
+    margin: 0.5rem 0;
+  }
+  .logout-message {
+    background-color: #f8d7da; /* Light red background */
+    color: #721c24; /* Dark red text */
+    border: 1px solid #f5c6cb; /* Border for the message */
+    padding: 1rem;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+  
+  
